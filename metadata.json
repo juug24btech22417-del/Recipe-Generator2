@@ -1,0 +1,5 @@
+{
+  "name": "What's In?",
+  "description": "A recipe generator application that suggests recipes based on ingredients.",
+  "requestFramePermissions": []
+}
