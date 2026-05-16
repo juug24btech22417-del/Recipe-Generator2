@@ -1298,15 +1298,15 @@ function RecipeCard({
 
   return (
     <div className="w-full bg-stone-50 rounded-2xl p-6 sm:p-10 shadow-md border border-stone-200 overflow-hidden relative">
-      <div className="flex justify-between items-start gap-4 mb-6">
-        <div>
+      <div className="flex flex-col sm:flex-row justify-between items-start gap-6 sm:gap-4 mb-6">
+        <div className="w-full max-w-full">
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-3 text-stone-900 leading-tight">
             {recipe.title}
           </h2>
           <p className="text-lg text-stone-600 leading-relaxed mb-4">
             {recipe.description}
           </p>
-          <div className="flex gap-2 mb-4">
+          <div className="flex flex-wrap gap-2 mb-4">
             <button 
               onClick={() => setIsCookAlong(!isCookAlong)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${isCookAlong ? 'bg-amber-500 text-white' : 'bg-stone-200 text-stone-700 hover:bg-stone-300'}`}
@@ -1379,7 +1379,7 @@ function RecipeCard({
             </div>
           )}
         </div>
-        <div className="flex gap-2">
+        <div className="flex shrink-0 gap-2 w-full sm:w-auto justify-end order-first sm:order-none mb-2 sm:mb-0">
           {onSwapDiet && (
             <div className="relative">
               <button 
@@ -1437,7 +1437,7 @@ function RecipeCard({
           <span className="font-medium text-stone-900">{recipe.cookTime}</span>
         </div>
         {recipe.nutrition && (
-          <div className="md:col-span-2 space-y-4">
+          <div className="w-full space-y-4 mt-2">
             <h4 className="text-sm font-semibold uppercase tracking-wider text-stone-400">Nutrient Breakdown</h4>
             <div className="flex flex-wrap gap-4">
               <div className="bg-stone-100 px-4 py-2 rounded-xl border border-stone-200">
@@ -1461,7 +1461,7 @@ function RecipeCard({
           </div>
         )}
         {recipe.tips && recipe.tips.length > 0 && (
-          <div className="mt-8 p-6 bg-emerald-50 border border-emerald-100 rounded-2xl">
+          <div className="w-full mt-4 p-6 bg-emerald-50 border border-emerald-100 rounded-2xl">
             <h4 className="text-lg font-semibold text-emerald-900 mb-4">Chef's Tips</h4>
             <ul className="list-disc list-inside space-y-2 text-emerald-800 text-sm">
               {recipe.tips.map((tip, idx) => (
@@ -1471,7 +1471,7 @@ function RecipeCard({
           </div>
         )}
         {recipe.variations && recipe.variations.length > 0 && (
-          <div className="mt-8 p-6 bg-sky-50 border border-sky-100 rounded-2xl">
+          <div className="w-full mt-4 p-6 bg-sky-50 border border-sky-100 rounded-2xl">
             <h4 className="text-lg font-semibold text-sky-900 mb-4">Recipe Variations</h4>
             <div className="space-y-4">
               {recipe.variations.map((variation, idx) => (
